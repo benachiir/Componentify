@@ -1,0 +1,70 @@
+{
+  "name": "react-extractor",
+  "displayName": "React Extractor",
+  "description": "Extract selected code into React components or custom hooks",
+  "version": "0.0.1",
+  "engines": {
+    "vscode": "^1.74.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  "activationEvents": [
+    "onLanguage:javascript",
+    "onLanguage:javascriptreact",
+    "onLanguage:typescript",
+    "onLanguage:typescriptreact"
+  ],
+  "main": "./out/extension.js",
+  "contributes": {
+    "commands": [
+      {
+        "command": "reactExtractor.extractComponent",
+        "title": "Extract React Component"
+      },
+      {
+        "command": "reactExtractor.extractHook",
+        "title": "Extract React Hook"
+      },
+      {
+        "command": "reactExtractor.extractAuto",
+        "title": "Extract React (Auto Detect)"
+      }
+    ],
+    "menus": {
+      "editor/context": [
+        {
+          "command": "reactExtractor.extractAuto",
+          "when": "editorHasSelection && (resourceExtname == .js || resourceExtname == .jsx || resourceExtname == .ts || resourceExtname == .tsx)",
+          "group": "1_modification"
+        },
+        {
+          "command": "reactExtractor.extractComponent",
+          "when": "editorHasSelection && (resourceExtname == .js || resourceExtname == .jsx || resourceExtname == .ts || resourceExtname == .tsx)",
+          "group": "1_modification"
+        },
+        {
+          "command": "reactExtractor.extractHook",
+          "when": "editorHasSelection && (resourceExtname == .js || resourceExtname == .jsx || resourceExtname == .ts || resourceExtname == .tsx)",
+          "group": "1_modification"
+        }
+      ]
+    }
+  },
+  "scripts": {
+    "vscode:prepublish": "npm run compile",
+    "compile": "tsc -p ./",
+    "watch": "tsc -watch -p ./"
+  },
+  "devDependencies": {
+    "@types/vscode": "^1.74.0",
+    "@types/node": "16.x",
+    "@types/babel__traverse": "^7.20.0",
+    "typescript": "^4.9.4"
+  },
+  "dependencies": {
+    "@babel/parser": "^7.23.0",
+    "@babel/traverse": "^7.23.0",
+    "@babel/types": "^7.23.0"
+  }
+}

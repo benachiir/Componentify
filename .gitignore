@@ -1,0 +1,32 @@
+# Build outputs
+out/
+*.vsix
+*.js.map
+
+# Dependencies
+node_modules/
+package-lock.json
+
+# Testing
+.vscode-test/
+
+# OS files
+.DS_Store
+
+# VSCode settings (keep launch.json and tasks.json for development)
+.vscode/settings.json
+
+# Temporary development files
+HOW-TO-RUN.md
+test-file.tsx
+TROUBLESHOOTING.md
+CHANGELOG.md
+
+# Generated JavaScript files in test-examples
+test-examples/*.js
+test-examples/*.js.map
+
+# Development files (keep examples and docs)
+# test-examples/ - Keep these for documentation
+.kiro/
+.vscode/
